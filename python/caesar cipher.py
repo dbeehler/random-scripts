@@ -53,7 +53,7 @@ def decodeWord(word):
         if scores > highest:
             highest = scores
             wordToDisplay = decodedStrings[englishScore.index(scores)]
-        if highest > 3:
+        if scores > 3:
             print("this phrase may match: " + wordToDisplay)
 
 if inputEnDe == 1:  
