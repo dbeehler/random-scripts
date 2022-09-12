@@ -1,0 +1,6 @@
+C:\Users\dbeehler\Desktop\git repositories\c# stuff\colorHex2\colorHex2\bin\Debug\colorHex2.exe.config
+C:\Users\dbeehler\Desktop\git repositories\c# stuff\colorHex2\colorHex2\bin\Debug\colorHex2.exe
+C:\Users\dbeehler\Desktop\git repositories\c# stuff\colorHex2\colorHex2\bin\Debug\colorHex2.pdb
+C:\Users\dbeehler\Desktop\git repositories\c# stuff\colorHex2\colorHex2\obj\Debug\colorHex2.csproj.CoreCompileInputs.cache
+C:\Users\dbeehler\Desktop\git repositories\c# stuff\colorHex2\colorHex2\obj\Debug\colorHex2.exe
+C:\Users\dbeehler\Desktop\git repositories\c# stuff\colorHex2\colorHex2\obj\Debug\colorHex2.pdb

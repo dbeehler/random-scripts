@@ -1,0 +1,7 @@
+C:\Users\dbeehler\source\repos\barcodeCheck\barcodeCheck\bin\Debug\barcodeCheck.exe.config
+C:\Users\dbeehler\source\repos\barcodeCheck\barcodeCheck\bin\Debug\barcodeCheck.exe
+C:\Users\dbeehler\source\repos\barcodeCheck\barcodeCheck\bin\Debug\barcodeCheck.pdb
+C:\Users\dbeehler\source\repos\barcodeCheck\barcodeCheck\obj\Debug\barcodeCheck.csprojAssemblyReference.cache
+C:\Users\dbeehler\source\repos\barcodeCheck\barcodeCheck\obj\Debug\barcodeCheck.csproj.CoreCompileInputs.cache
+C:\Users\dbeehler\source\repos\barcodeCheck\barcodeCheck\obj\Debug\barcodeCheck.exe
+C:\Users\dbeehler\source\repos\barcodeCheck\barcodeCheck\obj\Debug\barcodeCheck.pdb
