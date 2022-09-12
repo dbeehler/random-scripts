@@ -3,6 +3,13 @@ from operator import index, indexOf
 from nltk.corpus import words 
 import string
 
+#Dusty Beehler September 2022
+#Caesar cipher encode and decoder
+#Encodes using a defined shift
+#Decodes by decoding all possible strings incrementing by -1
+#Assigns a score to each string for each English word found
+#Prints highest score, or if there are multiple found it would print that as well, but most times it would just be one
+
 alpha = list(string.ascii_lowercase)
 alpha += " "
 inputEnDe = int(input("Enter 1 for encode. 2 for decode: "))
