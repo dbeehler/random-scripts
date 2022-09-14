@@ -1,11 +1,11 @@
 import random
+from time import sleep
 fullBoard = [['I','I','I'],['I','I','I'],['I','I','I']]
 
 #TO DO
-#Probably fix win checker more
-#add something to see if all pieces are filled with no winner
-#Random start (Comp can start (50/50 chance))
-
+#Probably fix win checker more - I think this works 100% of the time
+#add something to see if all pieces are filled with no winner - Done?
+#Random start (Comp can start (50/50 chance)) - WIP
 
 def badPiece(x,y):
     if fullBoard[y-1][x-1] == 'X' or fullBoard[y-1][x-1] == 'O':
@@ -13,30 +13,37 @@ def badPiece(x,y):
     else:
         return False
 
-def playerMove(x, y):
+def playerMove(x, y, move):
     if not badPiece(x,y):
         fullBoard[y-1][x-1]="X"
+        move+=1
+        return move
     else:
         raise Exception
 
-def computerMove():
+def computerMove(move):
     placement = False
     while(not placement):
         xRand = random.randint(1,3)
         yRand = random.randint(1,3)
-        if not badPiece(xRand,yRand):
-            fullBoard[yRand-1][xRand-1]="O"
-            print(xRand-1,yRand-1)
-            placement = True
+        if move != 9:
+            if not badPiece(xRand,yRand):
+                fullBoard[yRand-1][xRand-1]="O"
+                print(xRand-1,yRand-1)
+                placement = True
+                move+=1
+                return move
+            else:
+                placement = False
         else:
-            placement = False
+            placement = True
+            return move
 
 
 def displayBoard():
     for element in fullBoard:
         print(element)
 
-#win check be like "I broken"
 def checkWin(board):
     for row in range(3):
         if board[row][0]==board[row][1]==board[row][2]:
@@ -84,13 +91,35 @@ def checkWin(board):
     return False
 
 winner = False
+numMoves = 0
+firstTurn = True
 while(winner==False):
-    try:
-        playerMove(int(input("Enter X axis: ")), int(input("Enter y axis: ")))
-    except Exception as e:
-        print(e)
-        print("bad move, please try again")
-        continue
-    computerMove()
-    displayBoard()
-    winner=checkWin(fullBoard)
+    if firstTurn:
+        randStart = random.randint(0,1)
+        if randStart == 0:
+            print("Player Starts")
+            sleep(2)
+            try:
+                numMoves = playerMove(int(input("Enter X axis: ")), int(input("Enter y axis: ")), numMoves)
+            except Exception as e:
+                print("bad move, please try again")
+                continue
+        else:
+            print("Computer Starts")
+            sleep(2)
+            numMoves=computerMove(numMoves)
+            continue
+        firstTurn=False
+    else:
+        try:
+            numMoves = playerMove(int(input("Enter X axis: ")), int(input("Enter y axis: ")), numMoves)
+        except Exception as e:
+            print(e)
+            print("bad move, please try again")
+            continue
+        numMoves=computerMove(numMoves)
+        displayBoard()
+        winner=checkWin(fullBoard)
+        if numMoves==9:
+            print("No Winner - Tie")
+            break
